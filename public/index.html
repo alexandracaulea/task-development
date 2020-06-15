@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="O 
+      scurtă poveste despre un oraș predominant gri și mohorat care a fost transformat într-un oraș colorat."
+    />
+    <meta name="keywords" content="Bucuresti, curcubeu, culori" />
+    <meta name="author" content="Alexandra Caulea" />
+    <title>Bucureștiul în culori</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/css/app.css" />
+    <script type="text/javascript">
+      if (!("IntersectionObserver" in window)) {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/intersection-observer@0.10.0/intersection-observer.js";
+        document.getElementsByTagName("head")[0].appendChild(script);
+      }
+    </script>
+    <script src="../src/js/app.js"></script>
+    <script>
+      const scriptRequest = document.createElement("script");
+      if (process.env.API_URL === undefined || process.env.API_KEY === undefined) {
+        scriptRequest.src = "https://maps.googleapis.com/maps/api/js?callback=initMap"
+      } else {
+        scriptRequest.src = `${process.env.API_URL}?key=${process.env.API_KEY}&callback=initMap`;
+      }
+      scriptRequest.setAttribute("defer", true);
+      document.querySelector("head").insertAdjacentElement("beforeend", scriptRequest);
+    </script>
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <h1 class="intro__title">
+          Bucureștiul în culori
+        </h1>
+        <p class="intro__paragraph">
+          Bucureștiul, asemenea multor orașe din România, este văzut ca un oraș predominant gri și mohorât.
+        </p>
+      </section>
+      <section class="continue">
+        <svg
+          class="rainbow-heart-1"
+          aria-hidden="true"
+          width="80"
+          height="79"
+          viewBox="0 0 80 79"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M30.8617 15.1147L35.2625 17.1915C40.4752 10.6497 46.9771 5.23411 54.5069 3.35655C62.0315 1.48029 70.5654 3.85328 74.7191 9.93243L76.7456 8.54775L74.7191 9.93244C79.6792 17.1918 77.5805 28.1641 71.6653 35.8586C66.0097 43.2153 57.8134 48.1587 49.2826 52.9936C48.8962 53.2126 48.5081 53.4321 48.1187 53.6524C40.0464 58.2189 31.4054 63.1072 24.8562 70.473C23.7119 71.7596 22.6549 73.1221 21.6919 74.5509C14.2779 64.3803 8.65725 52.949 5.0958 40.772C2.76481 32.7677 1.48095 24.5434 3.51012 17.0237C5.54448 9.48468 11.542 3.15069 18.4479 2.53718C21.732 2.24543 25.2429 3.70135 27.7656 6.21977C30.2794 8.72928 31.5251 11.9878 30.8617 15.1147Z"
+            fill="url(#heart-rainbow-1)"
+            stroke="var(--rainbow-clr-six)"
+            stroke-width="5"
+          />
+          <defs>
+            <linearGradient id="heart-rainbow-1" x1="0" y1="79" x2="67.5" y2="79" gradientUnits="userSpaceOnUse">
+              <stop offset="0.0" stop-color="var(--rainbow-clr-one)" />
+              <stop offset="0.171875" stop-color="var(--rainbow-clr-two)" />
+              <stop offset="0.338542" stop-color="var(--rainbow-clr-three)" />
+              <stop offset="0.510417" stop-color="var(--rainbow-clr-four)" />
+              <stop offset="0.682292" stop-color="var(--rainbow-clr-five)" />
+              <stop offset="0.838542" stop-color="var(--rainbow-clr-six)" />
+              <stop offset="1" stop-color="var(--rainbow-clr-seven)" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="continue__grid">
+          <h2 class="section__title">
+            De aceea, am hotărât să-l colorăm noi în viile culori ale curcubeului.
+          </h2>
+          <img src="../src/img/rainbow-town.svg" alt="Ilustratie cu un nor, curcubeu si un oras" />
+        </div>
+      </section>
+      <section class="more">
+        <h2 class="section__title">
+          Acum, fiecare sector are propria culoare.
+        </h2>
+        <svg
+          aria-hidden="true"
+          width="66"
+          height="33"
+          viewBox="0 0 66 33"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <use xlink:href="#colorful-rainbow-icon"></use>
+        </svg>
+        <div id="map"></div>
+      </section>
+      <section class="about">
+        <svg
+          aria-hidden="true"
+          class="red-heart-icon"
+          width="147"
+          height="64"
+          viewBox="0 0 147 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <use xlink:href="#red-heart-icon"></use>
+        </svg>
+        <h2 class="section__title-about">Un pic mai mult despre mine..</h2>
+        <img src="../src/img/alexandra-caulea.jpg" alt="Alexandra Caulea" class="about__photo" />
+        <p>
+          Numele meu este Alexandra-Victoria Caulea, am 32 ani și așa arătăm eu cu câteva minute înainte să lucrez la
+          acest proiect. Pe monitorul din dreapta aveam aplicația Figma deschisă împreună cu versiunea de desktop a
+          acestui layout dar goală.
+        </p>
+        <p>
+          Îmi place tot ceea ce ține de Web și îmi doresc că tot ceea ce fac să fie accesibil pentru toată lumea
+          (incluzând persoanele cu dizabilități).
+        </p>
+        <p>
+          Mă consider extrem de norocoasă pentru că pot să fac ceea ce îmi doresc, deși momentan nu lucrez în acest
+          domeniu.
+        </p>
+        <p>
+          Îmi doresc, în viitorul apropiat, să am oportunitatea de a lucra într-o echipa, cu oameni care își doresc să
+          fie într-o continuă dezvoltare din punct de vedere al carierei.
+        </p>
+        <p>
+          Dacă ai terminat de citit și ai ajuns până aici, mi-ar plăcea să aflu părerea ta despre despre acest proiect.
+          Apreciez orice feedback, chiar și dacă este unul negativ.
+        </p>
+        <div class="contact">
+          <a
+            href="mailto:alexandra.caulea@gmail.com?subject=Feedback%20Internship"
+            class="contact__link"
+            aria-label="Trimite un email Alexandrei"
+          >
+            <svg
+              aria-hidden="true"
+              width="20"
+              height="17"
+              viewBox="0 0 20 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <use xlink:href="#email-icon"></use>
+            </svg>
+            <strong>alexandra.caulea@gmail.com</strong></a
+          >
+
+          <a href="tel:+40735095739" class="contact__link" aria-label="Sun-o pe Alexandra"
+            ><svg
+              aria-hidden="true"
+              width="14"
+              height="20"
+              viewBox="0 0 14 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <use xlink:href="#mobile-icon"></use>
+            </svg>
+            0735.095.739</a
+          >
+        </div>
+      </section>
+      <div class="divider"></div>
+    </main>
+    <svg aria-hidden="true" style="display: none;">
+      <symbol id="colorful-rainbow-icon" viewBox="0 0 66 33">
+        <path
+          d="M0 33C7.65137e-07 24.2478 3.47678 15.8542 9.66548 9.66547C15.8542 3.47677 24.2479 -1.04368e-07 33 0C41.7521 1.04368e-07 50.1458 3.47678 56.3345 9.66547C62.5232 15.8542 66 24.2478 66 33L61.897 33C61.897 25.336 58.8525 17.986 53.4333 12.5667C48.014 7.1475 40.664 4.103 33 4.103C25.336 4.103 17.986 7.1475 12.5667 12.5667C7.1475 17.986 4.10301 25.336 4.103 33H0Z"
+          fill="var(--rainbow-clr-one)"
+        />
+        <path
+          d="M4 33C4 25.3087 7.05535 17.9325 12.4939 12.4939C17.9325 7.05535 25.3087 4 33 4C40.6913 4 48.0675 7.05535 53.5061 12.4939C58.9447 17.9325 62 25.3087 62 33H58.3943C58.3943 26.265 55.7189 19.8059 50.9565 15.0435C46.1941 10.2811 39.735 7.60567 33 7.60567C26.265 7.60567 19.8059 10.2811 15.0435 15.0435C10.2811 19.8059 7.60567 26.265 7.60567 33H4Z"
+          fill="var(--rainbow-clr-two)"
+        />
+        <path
+          d="M7 33C7 26.1044 9.73928 19.4912 14.6152 14.6152C19.4912 9.73928 26.1044 7 33 7C39.8956 7 46.5088 9.73928 51.3848 14.6152C56.2607 19.4912 59 26.1044 59 33H55.7673C55.7673 26.9617 53.3686 21.1708 49.0989 16.9011C44.8292 12.6314 39.0383 10.2327 33 10.2327C26.9617 10.2327 21.1708 12.6314 16.9011 16.9011C12.6314 21.1708 10.2327 26.9617 10.2327 33H7Z"
+          fill="var(--rainbow-clr-three)"
+        />
+        <path
+          d="M10 33C10 26.9 12.4232 21.0499 16.7365 16.7365C21.0499 12.4232 26.9 10 33 10C39.1 10 44.9501 12.4232 49.2635 16.7365C53.5768 21.0499 56 26.9 56 33H53.1403C53.1403 27.6584 51.0184 22.5357 47.2414 18.7586C43.4643 14.9816 38.3416 12.8597 33 12.8597C27.6585 12.8597 22.5357 14.9816 18.7586 18.7586C14.9816 22.5357 12.8597 27.6584 12.8597 33H10Z"
+          fill="var(--rainbow-clr-four)"
+        />
+        <path
+          d="M12 33C12 27.4305 14.2125 22.089 18.1508 18.1508C22.089 14.2125 27.4305 12 33 12C38.5695 12 43.911 14.2125 47.8492 18.1508C51.7875 22.089 54 27.4305 54 33H51.389C51.389 28.1229 49.4516 23.4456 46.003 19.997C42.5544 16.5484 37.8771 14.611 33 14.611C28.1229 14.611 23.4456 16.5484 19.997 19.997C16.5484 23.4456 14.611 28.1229 14.611 33H12Z"
+          fill="var(--rainbow-clr-five)"
+        />
+        <path
+          d="M14 33C14 27.9609 16.0018 23.1282 19.565 19.565C23.1282 16.0018 27.9609 14 33 14C38.0391 14 42.8718 16.0018 46.435 19.565C49.9982 23.1282 52 27.9609 52 33H49.6377C49.6377 28.5874 47.8848 24.3556 44.7646 21.2354C41.6444 18.1152 37.4126 16.3623 33 16.3623C28.5874 16.3623 24.3556 18.1152 21.2354 21.2354C18.1152 24.3556 16.3623 28.5874 16.3623 33H14Z"
+          fill="var(--rainbow-clr-six)"
+        />
+        <path
+          d="M16 33C16 28.4913 17.7911 24.1673 20.9792 20.9792C24.1673 17.7911 28.4913 16 33 16C37.5087 16 41.8327 17.7911 45.0208 20.9792C48.2089 24.1673 50 28.4913 50 33L47.8863 33C47.8863 29.0519 46.318 25.2655 43.5262 22.4738C40.7345 19.682 36.9481 18.1137 33 18.1137C29.0519 18.1137 25.2655 19.682 22.4738 22.4738C19.682 25.2655 18.1137 29.0519 18.1137 33H16Z"
+          fill="var(--rainbow-clr-seven)"
+        />
+      </symbol>
+      <symbol id="red-heart-icon" viewBox="0 0 147 64">
+        <path
+          d="M55.2825 58L76.2394 33.7255C77.7725 32.1386 78.9819 30.2615 79.7986 28.2013C80.6152 26.1411 81.0231 23.9382 80.999 21.7184C80.9748 19.4985 80.5191 17.3053 79.6578 15.2638C78.7965 13.2223 77.5466 11.3726 75.9793 9.82027C74.412 8.26793 72.5581 7.04335 70.5234 6.21646C68.4887 5.38957 66.3131 4.97657 64.1207 5.00103C61.9284 5.02548 59.7623 5.48692 57.7461 6.359C55.7299 7.23108 53.9031 8.49671 52.3699 10.0837C50.8027 8.5313 48.9487 7.30673 46.914 6.47984C44.8794 5.65295 42.7037 5.23994 40.5114 5.2644C38.3191 5.28886 36.153 5.7503 34.1368 6.62238C32.1206 7.49446 30.2937 8.7601 28.7606 10.347C27.2275 11.934 26.0181 13.8111 25.2014 15.8713C24.3848 17.9315 23.9769 20.1344 24.001 22.3542C24.0252 24.574 24.4809 26.7673 25.3422 28.8088C26.2035 30.8502 27.4534 32.7 29.0207 34.2523L52.3363 58"
+          fill="var(--rainbow-clr-one)"
+        />
+        <path
+          d="M1 56.3693C1 56.3693 18.7805 50.7422 26.3537 58.4425C33.9268 66.1428 55 54 55 54"
+          stroke="#3F3D56"
+          stroke-width="2"
+          stroke-miterlimit="10"
+        />
+        <path
+          d="M146 58.7625C146 58.7625 142.709 50.8361 120.328 58.102C97.9472 65.3678 66.3508 65.0375 58.4517 53.8085L79.5218 29.6218C81.0632 28.0406 82.2792 26.1702 83.1002 24.1174C83.9213 22.0647 84.3314 19.8697 84.3071 17.658C84.2828 15.4462 83.8246 13.2608 82.9587 11.2267C82.0928 9.19264 80.836 7.3496 79.2603 5.80286C77.6845 4.25612 75.8206 3.03596 73.7749 2.21206C71.7292 1.38816 69.5418 0.976653 67.3376 1.00102C65.1334 1.02539 62.9556 1.48516 60.9285 2.35409C58.9014 3.22302 57.0647 4.48408 55.5233 6.06528C52.3409 2.9415 48.0522 1.21423 43.6007 1.26345C39.1491 1.31266 34.8994 3.13434 31.7863 6.32772C28.6733 9.5211 26.952 13.8246 27.001 18.2915C27.0501 22.7584 28.8655 27.0228 32.0479 30.1466L55.4895 53.8085"
+          stroke="#3F3D56"
+          stroke-width="2"
+          stroke-miterlimit="10"
+        />
+      </symbol>
+      <symbol id="mobile-icon" viewBox="0 0 14 20">
+        <path
+          d="M11.286 1H2.714C1.768 1 1 1.806 1 2.8v14.4c0 .994.768 1.8 1.714 1.8h8.572c.947 0 1.714-.806 1.714-1.8V2.8c0-.994-.768-1.8-1.714-1.8z"
+          stroke="#222831"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path d="M7 16h.008" stroke="#222831" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="email-icon" viewBox="0 0 20 17">
+        <path
+          d="M2.8 1.57129H17.2C18.19 1.57129 19 2.36682 19 3.33915V13.9463C19 14.9186 18.19 15.7141 17.2 15.7141H2.8C1.81 15.7141 1 14.9186 1 13.9463V3.33915C1 2.36682 1.81 1.57129 2.8 1.57129Z"
+          stroke="#222831"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M19 3.49951L10 9.28523L1 3.49951"
+          stroke="#222831"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+  </body>
+</html>
