@@ -21,8 +21,8 @@ src/
 
 ## Installation
 
-1. Clone this Git repository:
-2. Install website dependencies by running command: `npm install`
+1. Clone this Git repository: `git clone https://github.com/alexandracaulea/task-development.git`.
+2. Install project dependencies by running: `npm install`.
 
 ## Using this repo
 
