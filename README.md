@@ -1,4 +1,4 @@
-# Task Development Code Challenge
+# Task Development
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/20d9297c-cda9-4efa-adac-7972ddae5dba/deploy-status)](https://app.netlify.com/sites/bucurestiul-in-culori/deploys)
 
@@ -46,5 +46,11 @@ Create a webpage in HTML, CSS and JavaScript that contains the following 4 compo
 
 1. For the development run: `npm run dev`.
 2. To build run `npm run build`.
+
+## Live Example
+
+See the webpage: https://bucurestiul-in-culori.netlify.app/
+
+<br /><br />
 
 ![Webpage gif](bucurestiul-in-culori.gif)
